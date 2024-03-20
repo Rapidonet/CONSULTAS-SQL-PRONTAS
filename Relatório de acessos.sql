@@ -4,7 +4,7 @@
                        Empresa: Rapidonet Sistemas e Automação
 					   
 					   Software: FORACESSO
-                       Data da última modificação: 12/03/24 - 16:06
+                       Data da última modificação: 12/03/24
 
   Descrição: Relatório de acessos que imprime os tipos de registro de acesso (entrada ou saída)
 
