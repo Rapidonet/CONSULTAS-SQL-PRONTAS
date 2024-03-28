@@ -1,26 +1,30 @@
 /* ------------------------------------------------------------------------------------------------------------------
 
-                       Autora: VitÛria Viana | vitoria@rapidonet.com.br
-                       Empresa: Rapidonet Sistemas e AutomaÁ„o
+                       Autora: Vit√≥ria Viana | vitoria@rapidonet.com.br
+                       Empresa: Rapidonet Sistemas e Automa√ß√£o
 					   
 					   Software: FORACESSO
-                       Data da ˙ltima modificaÁ„o: 05/09/2023
+                       Data da √∫ltima modifica√ß√£o: 05/09/2023
 
-  DescriÁ„o: Imprime informaÁıes do acesso especial: matrÌcula, nome, perfil de acesso, empresa, data inÌcio e fim
-             do acesso, bem como quem liberou e a justificativa da permiss„o.
+  Descri√ß√£o: Imprime informa√ß√µes do acesso especial: matr√≠cula, nome, perfil de acesso, empresa, data in√≠cio e fim
+             do acesso, bem como quem liberou e a justificativa da permiss√£o.
+
+  Obs.: Gentileza prestar aten√ß√£o onde ir√° rodar a consulta sql, veja que tem o campo:
+        ISNULL(C.CNTR_DESCRICAO, '1 - MINERA√á√ÉO MARAC√Å IND.COM. S/A') "EMPRESA", que substitui
+	os campos nulos pelo nome da empresa escolhida na hora da cria√ß√£o do script.
 
 ------------------------------------------------------------------------------------------------------------------ */
 
-SELECT M.MATR_MATRICULA "MATRÕCULA", 
+SELECT M.MATR_MATRICULA "MATR√çCULA", 
 	   P.PESS_NOME "NOME",
 	   PA.PEAC_DESCRICAO "PERFIL_ACESSO",
-	   ISNULL(C.CNTR_DESCRICAO, '1 - MINERA«√O MARAC¡ IND.COM. S/A') "EMPRESA",
-	   CONVERT(varchar, AE.ACES_INICIO, 103) "DATA INÕCIO",
+	   ISNULL(C.CNTR_DESCRICAO, '1 - MINERA√á√ÉO MARAC√Å IND.COM. S/A') "EMPRESA",
+	   CONVERT(varchar, AE.ACES_INICIO, 103) "DATA IN√çCIO",
 	   CONVERT(varchar, AE.ACES_INICIO, 108) "HORA",
 	   CONVERT(varchar, AE.ACES_TERMINO, 103) "DATA FIM",
 	   CONVERT(varchar, AE.ACES_TERMINO, 108) "HORA",
 	   LA.LOCA_NOME "LOCAL",
-	   RMD.REMD_USUARIO "USU¡RIO",
+	   RMD.REMD_USUARIO "USU√ÅRIO",
 	   MPE.MPES_JUSTIFICATIVA "JUSTIFICATIVA"
 FROM FORACESSO.EVENTO E
 INNER JOIN FORACESSO.MATRICULADO M ON M.PESS_ID = E.PESS_ID 
