@@ -4,7 +4,7 @@
                        Empresa: Rapidonet Sistemas e Automação
 					   
 					   Software: FORACESSO
-                       Data da última modificação: 05/09/2023
+                       Data da última modificação: 24/05/2024
 
   Descrição: Algo com cartões temporários
 
